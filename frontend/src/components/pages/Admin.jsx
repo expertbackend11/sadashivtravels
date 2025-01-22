@@ -22,7 +22,7 @@ const AdminPage = () => {
   const itemsPerPage = 5;
   const fetchTours = async () => {
     try {
-      const res = await axiosInstance.get("http://localhost:8000/api/v1/tours"); // Replace with your API URL
+      const res = await axiosInstance.get("https://sadashivtravels.onrender.com/api/v1/tours"); // Replace with your API URL
       setTours(res.data.data);
     } catch (error) {
       console.error("Error fetching tours:", error);
@@ -31,7 +31,7 @@ const AdminPage = () => {
   
   const fetchBookings = async () => {
     try {
-      const res = await axiosInstance.get("http://localhost:8000/api/v1/booking");
+      const res = await axiosInstance.get("https://sadashivtravels.onrender.com/api/v1/booking");
       console.log(res.data.data);
       setBookings(res.data.data);
     } catch (error) {
@@ -72,10 +72,10 @@ const AdminPage = () => {
     e.preventDefault();
     try {
       if (editTourId) {
-        await axiosInstance.put(`http://localhost:8000/api/v1/tours/${editTourId}`, formData); // Replace with your API URL
+        await axiosInstance.put(`https://sadashivtravels.onrender.com/api/v1/tours/${editTourId}`, formData); // Replace with your API URL
         alert("Tour updated successfully");
       } else {
-        await axiosInstance.post("http://localhost:8000/api/v1/tours", formData); // Replace with your API URL
+        await axiosInstance.post("https://sadashivtravels.onrender.com/api/v1/tours", formData); // Replace with your API URL
         alert("Tour created successfully");
       }
       setFormData({
@@ -114,7 +114,7 @@ const AdminPage = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axiosInstance.delete(`http://localhost:8000/api/v1/tours/${id}`); // Replace with your API URL
+      await axiosInstance.delete(`https://sadashivtravels.onrender.com/api/v1/tours/${id}`); // Replace with your API URL
       alert("Tour deleted successfully");
       fetchTours();
     } catch (error) {
