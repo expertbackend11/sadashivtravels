@@ -1,0 +1,12 @@
+.card .overlay {
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 0.3s ease;
+  }
+  
+  .card:hover .overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .modal-header{
+    border:none!important;
+  }
+  
